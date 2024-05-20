@@ -4,9 +4,13 @@ const students = [
   { name: "Jim", score: 85 },
   { name: "Joan", score: 95 },
 ];
+console.log(students.length);
 
 function getAverageStudentScore(students) {
-  // Start coding here
+  let sum = students.reduce(function (acc, curr) {
+    return acc + curr.score;
+  }, 0);
+  return sum / students.length;
 }
 
-getAverageStudentScore(students); // Output: 87.5
+console.log(getAverageStudentScore(students)); // Output: 87.5
